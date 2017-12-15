@@ -35,6 +35,9 @@ Rails.application.configure do
   config.assets.digest = true
   config.assets.quiet = true
 
+  config.action_controller.asset_host = ENV.fetch('ASSET_HOST', '//localhost:3000')
+  config.action_mailer.asset_host = ENV.fetch('ASSET_HOST', '//localhost:3000')
+
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
