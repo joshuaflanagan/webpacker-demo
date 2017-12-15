@@ -7,12 +7,4 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-function runme(options){
-  console.log("original:", __webpack_public_path__)
-  __webpack_public_path__ = options["assets"]
-  console.log('running application with:')
-  console.dir(options)
-  console.log("now:", __webpack_public_path__)
-}
-
-module.exports = runme;
+module.exports = require("app")

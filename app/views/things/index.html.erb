@@ -1,12 +1,8 @@
 <p id="notice"><%= notice %></p>
 
- <%= javascript_pack_tag 'application' %>
-  <script>
-    Mushy.application({assets: "//foobar.com"});
-//    renderApp({"first": 1, "second": "two"});
-  </script>
-
 <h1>Listing Things</h1>
+
+<div id="mount_here"></div>
 
 <table>
   <thead>
@@ -31,3 +27,13 @@
 <br>
 
 <%= link_to 'New Thing', new_thing_path %>
+
+<%= javascript_pack_tag 'application' %>
+
+<script>
+  Mushy.application.renderApplication({
+    elementId: "mount_here",
+    assets: "//foobar.com"
+  });
+</script>
+
